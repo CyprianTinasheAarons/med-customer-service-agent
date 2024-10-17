@@ -17,7 +17,7 @@ import operator
 from src.validators.agent.validators import *
 from src.tools import check_availability_by_doctor, check_availability_by_specialization, check_results, set_appointment, cancel_appointment, reminder_appointment, reschedule_appointment, retrieve_faq_info, get_catalog_specialists, obtain_specialization_by_doctor
 from datetime import datetime
-from utils import get_model
+from src.utils import get_model
 import logging
 
 
@@ -28,7 +28,7 @@ class MessagesState(TypedDict):
     
 tools = [check_availability_by_doctor, check_availability_by_specialization, check_results, set_appointment, cancel_appointment, reminder_appointment, reschedule_appointment, retrieve_faq_info, get_catalog_specialists, obtain_specialization_by_doctor] 
 
-tools_node = ToolNode(tools)
+tool_node = ToolNode(tools)
 
 model = get_model("openai")
 model = model.bind_tools(tools = tools)

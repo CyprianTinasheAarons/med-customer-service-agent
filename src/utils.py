@@ -11,7 +11,7 @@ def format_retrieved_docs(docs):
 
 def get_model(provider: Literal['openai', 'google', 'meta', 'anthropic']):
     if provider == "openai":
-        return ChatOpenAI(temperature=0, model_name="gpt-4o-mini", strict=True)
+        return ChatOpenAI(temperature=0, model_name="gpt-4o-mini")
     elif provider == "anthropic":
         return ChatAnthropic(temperature=0, model_name="claude-3-5-sonnet")
     elif provider == "google":

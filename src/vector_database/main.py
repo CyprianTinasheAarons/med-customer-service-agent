@@ -1,4 +1,4 @@
-from utils import PineconeManagment
+
 import os
 from dotenv import load_dotenv
 import sys
@@ -8,6 +8,7 @@ load_dotenv()
 WORKDIR = os.getenv("WORKDIR")
 os.chdir(WORKDIR)
 sys.path.append(WORKDIR)
+from src.vector_database.utils import PineconeManagment
 
 
 def deploy_vector_database(index_name: str):
